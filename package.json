@@ -1,0 +1,23 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "This repository contains exercises and examples for learning the basics of ES6 (ECMAScript 2015) in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemyjay/alx-backend-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemyjay/alx-backend-javascript/issues"
+  },
+  "homepage": "https://github.com/lemyjay/alx-backend-javascript#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
