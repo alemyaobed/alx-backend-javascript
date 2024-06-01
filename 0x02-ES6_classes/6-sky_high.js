@@ -9,7 +9,7 @@
 // Implement a getter for each attribute.
 // Override the method named evacuationWarningMessage and return the following string Evacuate slowly the NUMBER_OF_FLOORS floors.
 
-import Building from '5-building';
+import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
     constructor(sqft, floors) {
@@ -27,5 +27,8 @@ export default class SkyHighBuilding extends Building {
             throw new TypeError('floors must be a number');
         }
         this._floors = value;
+    }
+    evacuationWarningMessage() {
+        return `Evacuate slowly the ${this.floors} floors.`
     }
 }
