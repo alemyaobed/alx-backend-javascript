@@ -4,11 +4,19 @@
 // If the argument is not an array, the function is returning an empty array.
 // You must use the map function on the array.
 export default function getListStudentIds(studentList) {
-  const result = [];
-  if (Array.isArray(studentList)) {
-    for (const object of studentList) {
-      result.push(object.id);
-    }
+  // const result = [];
+  // if (Array.isArray(studentList)) {
+  //   for (const object of studentList) {
+  //     result.push(object.id);
+  //   }
+  // }
+  // return result;
+
+  // Check if the argument is an array using Array.isArray()
+  if (!Array.isArray(studentList)) {
+    return []; // Return an empty array if not an array
   }
-  return result;
+
+  // Use map() to iterate over the students array and extract the 'id' property
+  return studentList.map((student) => student.id);
 }
