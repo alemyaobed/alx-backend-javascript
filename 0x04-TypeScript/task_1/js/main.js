@@ -25,3 +25,10 @@ var director1 = {
     numberOfReports: 17,
 };
 console.log(director1);
+// Define the printTeacher function
+var printTeacher = function (firstName, lastName) {
+    var firstInitial = firstName.charAt(0);
+    return "".concat(firstInitial, ". ").concat(lastName);
+};
+// Example usage
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
