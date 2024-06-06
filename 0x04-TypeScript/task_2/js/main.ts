@@ -51,6 +51,21 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
+// Define the isDirector function as a type predicate
+function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+// Define the executeWork function
+function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+  } else {
+    console.log(employee.workTeacherTasks());
+  }
+}
+
+
 // Example usage
 console.log(createEmployee(200)); // Output: Teacher
 console.log(createEmployee(1000)); // Output: Director
@@ -62,3 +77,6 @@ console.log(employee1.workFromHome()); // Output: Cannot work from home
 
 const employee2 = createEmployee(1000);
 console.log(employee2.workFromHome()); // Output: Working from home
+
+executeWork(createEmployee(200)); // Output: Getting to work
+executeWork(createEmployee(1000)); // Output: Getting to director tasks
