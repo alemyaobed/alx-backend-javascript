@@ -66,3 +66,30 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 
 // Example usage
 console.log(printTeacher("John", "Doe")); // Output: J. Doe
+
+// The interface for the StudentClass constructor
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+interface IstudentClass {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Implement the StudentClass
+class StudentClass implements IstudentClass {
+  constructor(public firstName: string,public lastName: string) {}
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+  displayName(): string {
+    return this.firstName;
+  }
+
+}
+
+// Example usage
+const student = new StudentClass("John", "Doe");
+console.log(student.workOnHomework()); // Output: Currently working
+console.log(student.displayName()); // Output: John
