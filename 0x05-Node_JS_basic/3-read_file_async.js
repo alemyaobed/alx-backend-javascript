@@ -31,17 +31,21 @@ function countStudents(path) {
         // Calculate the total number of students
         const totalStudents = lines.length;
 
-        console.log(`Number of students: ${totalStudents}`);
+        let result = `Number of students: ${totalStudents}`;
+
+        console.log(result);
 
         // Log the number of students in each field and their names
         for (const field in studentsByField) {
           if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
             const students = studentsByField[field];
-            console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
+            const fieldInfo = `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`;
+            console.log(fieldInfo);
+            result += `\n${fieldInfo}`;
           }
         }
 
-        resolve();
+        resolve(result);
       }
     });
   });
