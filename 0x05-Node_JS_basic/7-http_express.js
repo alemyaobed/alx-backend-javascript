@@ -16,7 +16,7 @@ app.get('/students', async (req, res) => {
     const studentInfo = await countStudents(databasePath);
     res.send(`This is the list of our students\n${studentInfo}`);
   } catch (error) {
-    res.send(error.message);
+    res.status(500).send(error.message);
   }
 });
 
